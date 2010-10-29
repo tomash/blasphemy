@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "blasphemy.gemspec",
      "lib/blasphemy.rb",
      "test/helper.rb",
      "test/test_blasphemy.rb"
