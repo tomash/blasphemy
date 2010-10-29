@@ -1,16 +1,50 @@
-= blasphemy
+= Blasphemy
 
-Description goes here.
+A kind of... different Lorem Ipsum generator. Easily extensible. Surprise your client with thinking out of the box and stub texts with something more original than boring "Lorem ipsum dolor sit amet".
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+You can call it a "framework" (wo ho hoo!) for building own Lorem Ipsum generators. We all now it's just for building and spewing surprisingly elaborate random curses.
+
+Basically it all started as a {joke gist}[http://gist.github.com/638477] inspired by {John Mettraux}[http://twitter.com/jmettraux] who, in turn, {suggested the idea}[http://twitter.com/jmettraux/status/28022295426] after I've {tweeted a link to Lorizzle}[http://twitter.com/_tomash/status/28022100766].
+
+== Usage
+
+Pretty straightforward Ruby here.
+
+=== Using built-in MetalIpsum
+
+It's in the Faker module space, to pay homage and avoid collisions. However it doesn't require original Faker and is purely self-contained.
+
+  require 'blasphemy'
+  generator = Faker::MetalIpsum.new
+  generator.paragraph
+  generator.sentence
+  generator.words
+
+=== Own word-list
+
+There is a class TabulaIpsum with an empty wordlist, waiting to be filled with any words you like.
+
+  generator = Faker::TabulaIpsum.new
+  generator.wordlist = ['lol', 'rotfl', 'omg', 'wtf']
+
+
+=== Own generator class
+
+For some more persistence, create a class like this
+
+  module Faker
+    class MarketingIpsum < CustomIpsum
+      def initialize
+        @wordlist = ['success', 'patenting', 'innovative', 'milestone']
+      end
+    end
+  end
+
+And use it like all the other above.
+
+== Forking and ideas
+
+Contact me via github PM or e-mail. I don't have any specific idea on direction this little gem should be going.
 
 == Copyright
 
