@@ -95,4 +95,15 @@ module Faker
       end
     end
   end
+
+  class PornIpsum < CustomIpsum
+    def initialize
+      @wordlist = [
+        "sex", "hardcore", "anal", "porn", "sperm", "deepthroat", "gag", "midget",
+        "teen", "pussy", "gay", "nude", "cock", "dick", "breast", "tits", "virgin",
+        "black", "chick", "latin", "milf", "cum", "amature", "escort", "orgasm", "horse",
+        "asian", "blowjob", "creampie", "cumshot", "facial", "gangbang", "lesbian",
+        "mature", "granny", "dirty", "slut", "nurse", "secretary", "shemale", "goat"]
+    end
+  end
 end
