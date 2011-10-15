@@ -14,6 +14,6 @@ class TestBlasphemy < Test::Unit::TestCase
 
   def test_five_word_tabula_ipsum
     @tabula.wordlist = ["foo","foo","foo","foo","foo"]
-    assert(@tabula.sentence.scan("foo").size > 3)
+    assert(@tabula.sentence.scan("foo").size > 1)
   end
 end
