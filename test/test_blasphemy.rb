@@ -16,4 +16,9 @@ class TestBlasphemy < Test::Unit::TestCase
     @tabula.wordlist = ["foo","foo","foo","foo","foo"]
     assert(@tabula.sentence.scan("foo").size > 1)
   end
+
+  def test_samuel_ipsum
+    @samuel = Faker::SamuelLIpsum.new
+    assert_match(/in/, @samuel.paragraph)
+  end
 end
